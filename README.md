@@ -2,9 +2,6 @@
 
 A beautiful and highly customizable personal dashboard that replaces your browser's default new tab page. This project is built with pure HTML, CSS, and JavaScript, and uses `localStorage` to remember all your settings and preferences.
 
-![Dashboard Preview](https://i.imgur.com/your-preview-image.png) 
-*Note: You can replace the link above with a screenshot of your own dashboard!*
-
 ---
 
 ## Features
@@ -58,3 +55,4 @@ This project was built from the ground up using only the core technologies of th
 * **JavaScript (ES6+)**: For all the interactive logic, state management, and DOM manipulation.
 
 No external frameworks or libraries were used, making this a lightweight and fast-loading application.
+
