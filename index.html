@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-text">Welcome back ✨</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BACKGROUND & OVERLAYS -->
+    <div id="background-animations"></div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- TOP NAVIGATION -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="clock" id="clock">12:00</div>
+            <div class="date" id="date">Monday, January 1</div>
+            <div class="weather">
+                <span>🌤️</span>
+                <span>22°C</span>
+            </div>
+        </div>
+        <button class="settings-btn" id="settingsBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- SETTINGS SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title">Settings</h2>
+            <button class="close-btn" id="closeBtn">×</button>
+        </div>
+        <div class="setting-group">
+            <label class="setting-label">Dark Mode</label>
+            <div class="toggle-switch" id="darkModeToggle">
+                <div class="toggle-handle"></div>
+            </div>
+        </div>
+        <div class="setting-group">
+            <label class="setting-label">Background Theme</label>
+            <div class="theme-list">
+                <div class="theme-item" data-theme="default"><div class="theme-swatch" style="background: linear-gradient(-45deg, #ff9a9e, #fad0c4)"></div><div class="theme-info"><span class="theme-name">Sakura Dream</span><span class="theme-description">Vibrant gradient with falling cherry blossoms.</span></div></div>
+                <div class="theme-item" data-theme="forest"><div class="theme-swatch" style="background: linear-gradient(-45deg, #2c3e50, #4a6741)"></div><div class="theme-info"><span class="theme-name">Enchanted Forest</span><span class="theme-description">A calm, earthy gradient with floating fireflies.</span></div></div>
+                <div class="theme-item" data-theme="charcoal"><div class="theme-swatch" style="background: linear-gradient(-45deg, #232526, #414345)"></div><div class="theme-info"><span class="theme-name">Charcoal</span><span class="theme-description">Dark and modern.</span></div></div>
+                <div class="theme-item" data-theme="midnight"><div class="theme-swatch" style="background: linear-gradient(-45deg, #1a1a2e, #16213e)"></div><div class="theme-info"><span class="theme-name">Midnight Sky</span><span class="theme-description">A deep, dark theme with twinkling stars.</span></div></div>
+                <div class="theme-item" data-theme="obsidian"><div class="theme-swatch" style="background: linear-gradient(-45deg, #000000, #434343)"></div><div class="theme-info"><span class="theme-name">Starfall</span><span class="theme-description">Pure black with a mesmerizing meteor shower.</span></div></div>
+                <div class="theme-item" data-theme="deep-ocean"><div class="theme-swatch" style="background: linear-gradient(-45deg, #141e30, #243b55)"></div><div class="theme-info"><span class="theme-name">Deep Ocean</span><span class="theme-description">Subtle blue tones with gently rising bubbles.</span></div></div>
+                <div class="theme-item" data-theme="dark-teal"><div class="theme-swatch" style="background: linear-gradient(-45deg, #2d1b69, #11998e)"></div><div class="theme-info"><span class="theme-name">Dark Teal</span><span class="theme-description">A mix of purple and green.</span></div></div>
+                <div class="theme-item" data-theme="purple-teal"><div class="theme-swatch" style="background: linear-gradient(-45deg, #360033, #0b8793)"></div><div class="theme-info"><span class="theme-name">Purple Teal</span><span class="theme-description">Vibrant, shifting colors.</span></div></div>
+                <div class="theme-item active" data-theme="deep-blue"><div class="theme-swatch" style="background: linear-gradient(-45deg, #000428, #004e92)"></div><div class="theme-info"><span class="theme-name">Deep Blue</span><span class="theme-description">A simple, deep blue gradient.</span></div></div>
+                <div class="theme-item" data-theme="dark-purple"><div class="theme-swatch" style="background: linear-gradient(-45deg, #3c1053, #ad5389)"></div><div class="theme-info"><span class="theme-name">Cosmic Drift</span><span class="theme-description">Rich purple with a subtle, moving galaxy.</span></div></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <h1 class="greeting">Hey there 👋 Ready to get stuff done?</h1>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search the web..." />
+        </div>
+        <div class="shortcuts-container" id="shortcutsContainer">
+            <!-- Grid for both shortcuts and groups -->
+            <div class="shortcuts-grid" id="shortcutsGrid"></div>
+            
+            <!-- Action buttons -->
+            <div class="shortcut-actions-bar">
+                <button class="action-btn" id="addShortcutBtn">Add Shortcut</button>
+                <button class="action-btn" id="manageGroupsBtn">Organize Groups</button>
+                <button class="action-btn" id="addGroupBtn" style="display: none;">+ New Group</button>
+                <button class="action-btn btn-primary" id="doneOrganizingBtn" style="display: none;">Done</button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- SHORTCUT MODAL -->
+    <div class="modal-overlay" id="shortcutModal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">Add Shortcut</h2>
+            <form id="shortcutForm">
+                <input type="hidden" id="shortcutId">
+                <div class="form-group">
+                    <label for="shortcutName" class="form-label">Name</label>
+                    <input type="text" id="shortcutName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="shortcutUrl" class="form-label">URL</label>
+                    <input type="url" id="shortcutUrl" class="form-input" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn btn-secondary" id="cancelShortcut">Cancel</button>
+                    <button type="submit" class="modal-btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
